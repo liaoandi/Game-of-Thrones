@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+
+	<head>
+		<title>Characters and Battles in Game of Thrones</title>
+	</head>
+
+	<body>
+		<h1> Characters and Battles in Game of Thrones</h1>
+
+		<br>
+
+		<ol>
+			<li> Display all tables in the database by clicking the link below: using <i>list_tables.php</i>
+				<p>
+					<a href = "list_tables.php">List All Tables!</a>
+				</p>
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Calculate the victory rate of a house by entering the house name below: using <i>compute_victoryrate.php</i>
+				<p>
+					<form method = get action = "compute_victoryrate.php">
+						<b>Enter House Name (e.g. House Stark, House Targaryen):</b><br>
+						<input type = "text" name = "house_name">
+						<br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form>
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Find the list of dead people by entering the season below: using <i>find_deadpeople.php</i>
+				<p>
+					<form method = get action = "find_deadpeople.php">
+						<b>Enter Season (e.g. Season 1, Season 7):</b><br>
+						<input type = "text" name = "timeline_name"><br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form>
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Find the list of characters by selecting a relationship type below(It is a fuzzy search!): using <i>find_relation.php</i>
+				<p>
+					<form method = get action = "find_relation.php">
+
+						<b>Select Relation Type:</b><br>
+						<select name = "relation_name">
+							<option value = "Daughter">Daughter</option>
+							<option value = "Son">Son</option>
+							<option value = "Father">Father</option>
+							<option value = "Mother">Mother</option>
+							<option value = "Siblings">Siblings</option>
+							<option value = "Cousin">Cousin</option>
+							<option value = "Spouse">Spouse</option>
+							<option value = "Husband">Husband</option>
+							<option value = "Wife">Wife</option>
+							<option value = "Lover">Lover</option>
+						</select>
+						<br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form>
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Calculate the age of characters in a house by selecting the season and last name below: using <i>compute_age.php</i>
+				<p>
+					<form method = get action = "compute_age.php">
+
+						<b>Select Season:</b><br>
+						<select name = "timeline_name">
+							<option value = "Season 1">Season 1</option>
+							<option value = "Season 2">Season 2</option>
+							<option value = "Season 3">Season 3</option>
+							<option value = "Season 4">Season 4</option>
+							<option value = "Season 5">Season 5</option>
+							<option value = "Season 6">Season 6</option>
+							<option value = "Season 7">Season 7</option>
+						</select>
+				</p>
+
+				<p>
+						<b>Select Last Name:</b><br>
+						<select name = "last_name">
+							<option value = "Stark">Stark</option>
+							<option value = "Lannister">Lannister</option>
+							<option value = "Targaryen">Targaryen</option>
+							<option value = "Tyrell">Tyrell</option>
+							<option value = "Greyjoy">Greyjoy</option>
+							<option value = "Baelish">Baelish</option>
+							<option value = "Baratheon">Baratheon</option>
+							<option value = "Martell">Martell</option>
+							<option value = "Mormont">Mormont</option>
+							<option value = "Bolton">Bolton</option>
+							<option value = "Tarly">Tarly</option>
+							<option value = "Snow">Snow</option>
+						</select>
+						<br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form>
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Find the number of city by choosing the condition below (Please try different combinations to test different outputs! ): using <i>count_city.php</i>
+				<p>
+					<form method = get action = "count_city.php">
+
+						<b>Select Continent Name:</b><br>
+						<input type = "radio" name = "continent_name" value = "Westeros" checked>Westeros<br>
+						<input type = "radio" name = "continent_name" value = "Essos">Essos<br>
+				</p>
+				<p>
+						<b>Select Capital or not:</b><br>
+						<input type = "radio" name = "is_capital" value = "True" checked>Yes<br>
+						<input type = "radio" name = "is_capital" value = "False">No<br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form> 
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Find the battle satisfying the following condition(Some might return empty set as there is no record satisfying the combination of parameters.): using <i>find_battle.php</i>
+				<p>
+					<form method = get action = "find_battle.php">
+
+						<b>Select House Name:</b><br>
+						<select name = "last_name">
+							<option value = "Stark">Stark</option>
+							<option value = "Lannister">Lannister</option>
+							<option value = "Targaryen">Targaryen</option>
+							<option value = "Tyrell">Tyrell</option>
+							<option value = "Greyjoy">Greyjoy</option>
+							<option value = "Baelish">Baelish</option>
+							<option value = "Baratheon">Baratheon</option>
+							<option value = "Martell">Martell</option>
+							<option value = "Mormont">Mormont</option>
+							<option value = "Bolton">Bolton</option>
+							<option value = "Tarly">Tarly</option>
+							<option value = "Snow">Snow</option>
+						</select>
+				</p>
+				<p>
+						<b>Select Role:</b><br>
+						<input type = "radio" name = "role" value = "Attacker" checked>Attacker<br>
+						<input type = "radio" name = "role" value = "Defender">Defender<br>
+						<input type = "radio" name = "role" value = "Alliance with Attacker">Alliance with Attacker<br>
+						<input type = "radio" name = "role" value = "Alliance with Defender">Alliance with Defender
+				</p>
+				<p>
+						<b>Select Outcome:</b><br>
+						<input type = "radio" name = "outcome" value = "Win" checked>Win<br>
+						<input type = "radio" name = "outcome" value = "Lose">Lose<br>
+						<br>
+						<input type = "submit" value = "Submit">
+				</p>
+				</form> 
+			</li>
+
+			<br>
+			<hr>
+			<br>
+
+			<li> Display all characters in the database by clicking the link below: using <i>list_characters.php</i> and <i>list_battles.php</i>
+				<p>
+					<b>Who is my favorite character? You can find it in the table!</b><br>
+					<a href = "list_characters.php">List All Characters!</a>
+				</p>
+				<p>
+					<a href = "list_battles.php">List All Battles!</a>
+				</p>
+			</li>
+
+	</ol>
+
+	</body>
+</html>

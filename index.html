@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .carousel-inner img {
+      width: 100%; 
+      margin: auto;
+    }
+
+    .carousel-caption h1 {
+      position: fixed;
+      top: 50%;
+      left: 25%;
+      color: #fff !important;
+    }
+
+    .carousel-caption h3 {
+      color: #fff !important;
+    }
+
+    .item {
+      background-color: #222222;
+    }
+
+    @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 600px
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 100px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- navigation bar part -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>      
+        <span class="icon-bar"></span>                     
+      </button>
+      <a class="navbar-brand" href="#">GOT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#character">Character</a></li>
+        <li><a href="#house">House</a></li>
+        <li><a href="#battle">Battle</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#warehouse">WareHouse</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- picutre part -->
+<div id="home" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#home" data-slide-to="0" class="active"></li>
+      <li data-target="#home" data-slide-to="1"></li>
+      <li data-target="#home" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="war.jpg"  alt="war" style="width: 66.5%; height: 40%" class="center">
+        <div class="carousel-caption">
+            <h1>Database for Battles in Game of Thrones</h1>  
+            <h3>Andi Liao</h3>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="face.jpg" alt="face" style="width: 66.5%; height: 40%" class="center">
+        <div class="carousel-caption">
+          <h3>No one can survive</h3>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="house_pic.jpg" alt="house" style="width: 66.5%; height: 40%" class="center">
+        <div class="carousel-caption">
+          <h3>Fight for the house</h3>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#home" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#home" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<!-- character part -->
+<div id="character" class="container-fluid text-center">  
+
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <br>
+      <p><a href="list_tables.php">List All Tables!</a></p>
+      <br>
+      <p><a href="list_characters.php">List All Characters!</a></p>
+    </div>
+
+
+   <div class="col-sm-8 text-left"> 
+      <h1>1.Characters</h1>
+      <hr>
+      <h3>Add A Character</h3>
+      <br>
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="add_characters.php">
+          <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" placeholder="Lyanna" name="first_name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" placeholder="Stark" name="last_name">
+          </div>
+          <button type="submit" class="btn btn-danger">Add</button>
+        </form>
+        </div>
+
+      <hr>
+      <h3>Search & Update Characters</h3>
+      <br>
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action = "find_relation.php">
+          <div class="form-group">
+            <label for="relation_name">By Relation Type:</label>
+              <select class="form-control" name = "relation_name">
+                <option value = "Daughter">Daughter</option>
+                <option value = "Son">Son</option>
+                <option value = "Father">Father</option>
+                <option value = "Mother">Mother</option>
+                <option value = "Siblings">Siblings</option>
+                <option value = "Cousin">Cousin</option>
+                <option value = "Spouse">Spouse</option>
+                <option value = "Husband">Husband</option>
+                <option value = "Wife">Wife</option>
+                <option value = "Lover">Lover</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Find</button>
+        </form>
+        </div>
+
+        <br> 
+
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="search_characters.php">
+          <div class="form-group">
+            <label for="last_name">By House Name:</label>
+              <select class="form-control" name = "last_name">
+                <option value = "Stark">Stark</option>
+                <option value = "Lannister">Lannister</option>
+                <option value = "Targaryen">Targaryen</option>
+                <option value = "Tyrell">Tyrell</option>
+                <option value = "Greyjoy">Greyjoy</option>
+                <option value = "Baelish">Baelish</option>
+                <option value = "Baratheon">Baratheon</option>
+                <option value = "Martell">Martell</option>
+                <option value = "Mormont">Mormont</option>
+                <option value = "Bolton">Bolton</option>
+                <option value = "Tarly">Tarly</option>
+                <option value = "Snow">Snow</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Find</button>
+        </form>
+        <small class="form-text text-muted">Title can be updated here after searching.</small>
+        </div>
+
+        <br>
+
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action = "find_deadpeople.php">
+          <div class="form-group">
+            <label for="timeline_name">By Season:</label>
+              <select class="form-control" name = "timeline_name">
+                <option value = "Season 1">Season 1</option>
+                <option value = "Season 2">Season 2</option>
+                <option value = "Season 3">Season 3</option>
+                <option value = "Season 4">Season 4</option>
+                <option value = "Season 5">Season 5</option>
+                <option value = "Season 6">Season 6</option>
+                <option value = "Season 7">Season 7</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Find</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <a href="#home">UP</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#house">DOWN</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- house part -->
+<div id="house" class="container-fluid text-center">  
+
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+
+
+   <div class="col-sm-8 text-left"> 
+      <h1>2.Houses</h1>
+      <hr>
+      <h3>Compute Key Metrics</h3>
+      <br>
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="compute_victoryrate.php">
+          <div class="form-group">
+            <label for="house_name">House Name:</label>
+            <input type="text" class="form-control" placeholder="House Stark" name="house_name">
+          </div>
+          <button type="submit" class="btn btn-danger">Compute Victory Rate</button>
+        </form>
+        </div>
+
+        <br>
+
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="compute_age.php">
+          <div class="form-group">
+            <label for="last_name">House Name:</label>
+              <select class="form-control" name = "last_name">
+                <option value = "Stark">Stark</option>
+                <option value = "Lannister">Lannister</option>
+                <option value = "Targaryen">Targaryen</option>
+                <option value = "Tyrell">Tyrell</option>
+                <option value = "Greyjoy">Greyjoy</option>
+                <option value = "Baelish">Baelish</option>
+                <option value = "Baratheon">Baratheon</option>
+                <option value = "Martell">Martell</option>
+                <option value = "Mormont">Mormont</option>
+                <option value = "Bolton">Bolton</option>
+                <option value = "Tarly">Tarly</option>
+                <option value = "Snow">Snow</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline_name">Season:</label>
+              <select class="form-control" name = "timeline_name">
+                <option value = "Season 1">Season 1</option>
+                <option value = "Season 2">Season 2</option>
+                <option value = "Season 3">Season 3</option>
+                <option value = "Season 4">Season 4</option>
+                <option value = "Season 5">Season 5</option>
+                <option value = "Season 6">Season 6</option>
+                <option value = "Season 7">Season 7</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Compute Average Age</button>
+        </form>
+        </div>
+
+      <hr>
+      <h3>Add A House</h3>
+      <br>
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="add_houses.php">
+          <div class="form-group">
+            <label for="house_name">House Name:</label>
+            <input type="text" class="form-control" placeholder="House Umber" name="house_name">
+          </div>
+          <div class="form-group">
+            <label for="motto">Motto:</label>
+            <input type="text" class="form-control" placeholder="Our Meat is Bloody Tough" name="motto">
+          </div>
+          <div class="form-group">
+            <label for="flag">Flag:</label>
+            <input type="text" class="form-control" placeholder="Four silver chains linked by a central ring on dark red" name="flag">
+          </div>
+          <button type="submit" class="btn btn-danger">Add</button>
+        </form>
+        </div>
+
+
+      <hr>
+      <h3>Search & Update Character-House Connections</h3>
+      <br>
+
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="search_belong.php">
+          <div class="form-group">
+            <label for="house_name">House Name:</label>
+              <select class="form-control" name = "house_name">
+                <option value = "Stark">Stark</option>
+                <option value = "Lannister">Lannister</option>
+                <option value = "Targaryen">Targaryen</option>
+                <option value = "Tyrell">Tyrell</option>
+                <option value = "Greyjoy">Greyjoy</option>
+                <option value = "Baelish">Baelish</option>
+                <option value = "Baratheon">Baratheon</option>
+                <option value = "Martell">Martell</option>
+                <option value = "Mormont">Mormont</option>
+                <option value = "Bolton">Bolton</option>
+                <option value = "Tarly">Tarly</option>
+                <option value = "Snow">Snow</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Search</button>
+        </form>
+        <small class="form-text text-muted">Connections can be updated here after searching.</small>
+        </div>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <a href="#character">UP</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#battle">DOWN</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- battle part -->
+<div id="battle" class="container-fluid text-center">  
+
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="list_battles.php">List All Battles!</a></p>
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+      <h1>3.Battles</h1>
+      <hr>
+      <h3>Add & Delete A Battle</h3>
+      <br>
+          <div class="container-fluid text-center">
+          <form method = get class="form-inline" action="add_battles.php">
+            <div class="form-group">
+              <label for="battle_name">Battle Name:</label>
+              <input type="text" class="form-control" placeholder="Battle of Night King" name="battle_name">
+            </div>
+            <div class="form-group">
+              <label for="conflict">Conflict:</label>
+              <input type="text" class="form-control" placeholder="War for the North" name="conflict">
+            </div>
+            <div class="form-group">
+              <label for="result">Result:</label>
+              <input type="text" class="form-control" placeholder="Decisive walker victory" name="result">
+            </div>
+              <input type="submit" name="add" value = "Add" class="btn btn-danger">
+              <input type="submit" name="delete" value = "Delete" class="btn btn-danger">
+          </form>
+        </div>
+
+      <hr>
+      <h3>Search & Update Battles</h3>
+      <br>
+        <div class="container-fluid text-center">
+          <form method = get class="form-group" action="find_battle.php">
+          <div class="form-inline" style = "width: 250px>
+            <label for="last_name">House Name:</label>
+              <select class="form-control" name = "last_name">
+                <option value = "Stark">Stark</option>
+                <option value = "Lannister">Lannister</option>
+                <option value = "Targaryen">Targaryen</option>
+                <option value = "Tyrell">Tyrell</option>
+                <option value = "Greyjoy">Greyjoy</option>
+                <option value = "Baelish">Baelish</option>
+                <option value = "Baratheon">Baratheon</option>
+                <option value = "Martell">Martell</option>
+                <option value = "Mormont">Mormont</option>
+                <option value = "Bolton">Bolton</option>
+                <option value = "Tarly">Tarly</option>
+                <option value = "Snow">Snow</option>
+              </select>
+          </div>
+
+          <div class="form-inline">
+            <label for="role">Role:</label>
+              <input type = "radio" name = "role" value = "Attacker" checked>Attacker
+              <input type = "radio" name = "role" value = "Defender">Defender
+              <input type = "radio" name = "role" value = "Alliance with Attacker">Alliance with Attacker
+              <input type = "radio" name = "role" value = "Alliance with Defender">Alliance with Defender
+          </div>
+
+          <div class="form-inline">
+            <label for="outcome">Outcome:</label>
+              <input type = "radio" name = "outcome" value = "Win" checked>Win
+              <input type = "radio" name = "outcome" value = "Lose">Lose
+          </div>
+          <button type="submit" class="btn btn-danger">Search</button>
+          <br>
+          <small class="form-text text-muted">Information can be updated here after searching.</small>
+          </form>
+        </div>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <a href="#house">UP</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#location">DOWN</a>
+    </div>
+  </div>
+</div>
+ 
+
+<!-- location part -->
+<div id="location" class="container-fluid text-center">  
+
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+      <h1>4.Locations</h1>
+      <hr>
+      <h3>Add A Continent</h3>
+      <br>
+          <div class="container-fluid text-center">
+          <form method = get class="form-inline" action="add_locations.php">
+            <div class="form-group">
+              <label for="continent_name">Continent Name:</label>
+              <input type="text" class="form-control" placeholder="Sea" name="continent_name">
+            </div>
+            <div class="form-group">
+              <label for="continent_details">Continent Details:</label>
+              <input type="text" class="form-control" placeholder="A place cannot be controlled" name="continent_details">
+            </div>
+            <button type="submit" class="btn btn-danger">Add</button>
+          </form>
+          </div>
+
+      <hr>
+      <h3>Delete A Region</h3>
+      <br>
+          <div class="container-fluid text-center">
+          <form method = get class="form-inline" action="delete_locations.php">
+            <div class="form-group">
+              <label for="region_name">Region Name:</label>
+              <input type="text" class="form-control" placeholder="Dorne" name="region_name">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck">
+              <label class="form-check-label" for="exampleCheck">I really want to delete all records for this region!</label>
+            </div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+          </div>
+
+      <hr>
+      <h3>Search Cities</h3>
+      <br>
+        <div class="container-fluid text-center">
+        <form method = get class="form-inline" action="count_city.php">
+          <div class="form-group">
+            <label for="continent_name">Continent Name:</label>
+              <input type = "radio" name = "continent_name" value = "Westeros" checked>Westeros
+              <input type = "radio" name = "continent_name" value = "Essos">Essos
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="outcome">Is Capital:</label>
+              <input type = "radio" name = "is_capital" value = "True" checked>Yes
+              <input type = "radio" name = "is_capital" value = "False">No
+          </div>
+          <br>
+          <button type="submit" class="btn btn-danger">Search</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <a href="#battle">UP</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#warehouse">DOWN</a>
+    </div>
+  </div>
+</div>
+
+<!-- data warehouse -->
+<div id="warehouse" class="container-fluid text-center">  
+
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+      <h1>5.Data Warehouse</h1>
+      <hr>
+      <h3>Death</h3>
+      <br>
+      <a href="data_warehouse_1.php">Death Data Warehouse</a>
+
+      <hr>
+      <h3>LocationInfo</h3>
+      <br>
+      <a href="data_warehouse_2.php">Change of Location Owner Data Warehouse</a>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <a href="#location">UP</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="#about">DOWN</a>
+    </div>
+  </div>
+</div>
+
+
+<footer id = "about" class="container-fluid text-center">
+  <p>About</p>
+  <p>This is a database about the characters and battles in Game of Thrones.</p>
+</footer>
+
+</body>
+</html>
